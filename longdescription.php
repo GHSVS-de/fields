@@ -30,7 +30,9 @@ to include a text file.addParams
 Language string/descriptiontext can contain something like
 {HEAD-LINE:Setting <code>Fallback Languages</code> <b>(Hyphenopoly)</b>:}
 Only 1 occurence is allowed.
-To create a headline. 
+To create a headline.
+
+$myLayoutPath: Uses own JLayout to get rid of controls CSS class. JLayout is /plugins-directory/layouts/ghsvs/renderfield.php 
 */
 
 defined('JPATH_PLATFORM') or die;
