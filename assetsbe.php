@@ -13,16 +13,15 @@ Expects backend.css and/or backend.js in relative media path of $basepath
 
 defined('JPATH_PLATFORM') or die;
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\Form\FormField;
 use Joomla\CMS\HTML\HTMLHelper;
 
-class plgSystemVenoboxGhsvsFormFieldAssetsbe extends FormField
+class plgContentPrismHighlighterGhsvsFormFieldAssetsbe extends FormField
 {
 	protected $type = 'assetsbe';
 
 	// Path inside /media/.
-	protected $basePath = 'plg_system_venoboxghsvs';
+	protected $basePath = 'plg_content_prismhighlighterghsvs';
 
 	protected function getInput()
 	{
@@ -34,16 +33,17 @@ class plgSystemVenoboxGhsvsFormFieldAssetsbe extends FormField
 		$loadJQuery = isset($this->element['loadJQuery'])
 			? (string) $this->element['loadJQuery'] : true;
 
-		$file = $this->$basePath . '/backend';
+		$file = $this->basePath . '/backend';
 
 		if ($loadcss !== 'false')
 		{
-			HTMLHelper::_('stylesheet',
+			HTMLHelper::_(
+				'stylesheet',
 				$file . '.css',
-				array(
+				[
 					'relative' => true,
 					'version' => 'auto',
-				)
+				]
 			);
 		}
 
@@ -54,14 +54,16 @@ class plgSystemVenoboxGhsvsFormFieldAssetsbe extends FormField
 
 		if ($loadjs !== 'false')
 		{
-			HTMLHelper::_('script',
+			HTMLHelper::_(
+				'script',
 				$file . '.js',
-				array(
+				[
 					'relative' => true,
 					'version' => 'auto',
-				)
+				]
 			);
 		}
+
 		return '';
 	}
 
